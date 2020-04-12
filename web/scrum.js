@@ -23,6 +23,7 @@ function console_test() {
 
 eel.expose(taskobject_id_pitcher) // is capable of sending data to python 
 function taskobject_id_pitcher() {
+    console.log(caughtid)
     return caughtid[0]
 }
 
@@ -59,6 +60,8 @@ function qdata_insertion() {
 //                      Taskobject Creation
 //-----------------------------------------------------------------------------
 
+
+
 eel.expose(form_fetch)
 function form_fetch() { 
     var taskobjsub = document.getElementById("sub1").value;
@@ -79,7 +82,7 @@ function object_catcher(n) {
         while (i < howmanyarrays){
             var arraycontainer = objlist.splice(0, 3)
             var tasktableitem = document.createElement("LI");
-            tasktableitem.innerHTML = '<button class="btn btn-primary btn-lg" mouseenter="" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
+            tasktableitem.innerHTML = '<button class="btn btn-primary btn-lg" draggable="true" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
              + arraycontainer[1] + '</button>';
             tasktableitem.setAttribute("class", "list-group-item")
             document.getElementById(arraycontainer[2]).appendChild(tasktableitem);
@@ -89,5 +92,12 @@ function object_catcher(n) {
     }
     looper()    
 }
+
+//=============================================================================
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//=============================================================================
+
+//                      Drag and Drop functionality
+//-----------------------------------------------------------------------------
 
 
