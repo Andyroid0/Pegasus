@@ -82,7 +82,7 @@ function object_catcher(n) {
         while (i < howmanyarrays){
             var arraycontainer = objlist.splice(0, 3)
             var tasktableitem = document.createElement("LI");
-            tasktableitem.innerHTML = '<button class="btn btn-primary btn-lg" draggable="true" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
+            tasktableitem.innerHTML = '<button class="btn btn-primary btn-lg" ondragstart="onDragStart(event)" draggable="true" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
              + arraycontainer[1] + '</button>';
             tasktableitem.setAttribute("class", "list-group-item")
             document.getElementById(arraycontainer[2]).appendChild(tasktableitem);
@@ -100,4 +100,27 @@ function object_catcher(n) {
 //                      Drag and Drop functionality
 //-----------------------------------------------------------------------------
 
+function onDragStart(event){
+    event
+        .dataTransfer
+        .setData('text/plain', event.target.id)
+}
 
+function onDragover(ever) {
+    event.preventDefault()
+}
+
+function onDrop(event) {
+    const id = event
+        .dataTransfer
+        .getData('text')
+
+    const draggableElement = document.getElementById(id)
+    const dropzone = event.target
+
+    dropzone.appendChild(draggableElement)
+
+    event
+        .dataTransfer
+        .clearData()
+}
