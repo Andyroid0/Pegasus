@@ -34,6 +34,7 @@ from tinydb import TinyDB, Query
 db = TinyDB('db.json')
 scrumb = db.table('scrumb')
 queryenv = []
+scrumlistenv = []
 
 
 #=====================================================================
@@ -134,6 +135,31 @@ def query_pitcher():
     envstr = queryenv[0]
     return envstr
 
+#------------------------------------------------------------------------
+
+#||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+#------------------------------------------------------------------------    
+#              Taskobject dragndrop change List - Scrum
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+def list_change_id_catcher(n):
+    thisguy = n
+    query_list_change(thisguy)
+
+def query_list_change(n):
+    if len(scrumlistenv) > 0:
+        scrumlistenv.pop()
+    if len(queryenv) > 0:
+        queryenv.pop()
+    query = scrumb.update({'list': scrumlistenv}, Query().id == n)
+    qsub = query['subject']
+    qdesc = query['description']
+    qlist = query['list']
+    qpack = qsub + "..,|,.." + qdesc + "..,|,.." + qlist
+    queryenv.append(qpack)
+    eel.query_trigger()
+
 
 #-------------------------------------------------------------------------
 
@@ -159,6 +185,10 @@ def task_button():
 @eel.expose
 def id_exchange_button():
     eel.taskobject_id_pitcher()(taskobject_id_catcher)
+
+@eel.expose
+def list_exchange_button():
+    eel.taskobject_id_pitcher()(list_change_id_catcher)
 
 
 

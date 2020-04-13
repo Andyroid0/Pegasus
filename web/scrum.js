@@ -4,6 +4,7 @@
 // ------------------------------------------------------
 var subjectsobj = [];
 var caughtid = [];
+scrumlistenv = [];
 // ------------------------------------------------------
 
 
@@ -117,10 +118,24 @@ function onDrop(event) {
 
     const draggableElement = document.getElementById(id)
     const dropzone = event.target
+    
 
-    dropzone.appendChild(draggableElement)
+    var appendtoo = document.querySelector(dropzone > "div")
+    console.log(appendtoo)
+    
+// Figure out how to drill down to the div element to append dragger to.
+
+    console.log(id)
+
+    caughtid.pop()
+    scrumlistenv.pop()
+    caughtid.push(id)
+    scrumlistenv.push()
+    
+    appendtoo.appendChild(draggableElement)
 
     event
         .dataTransfer
         .clearData()
 }
+
