@@ -4,11 +4,17 @@ Secure Freemium set of productivity tools.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+After you pull the Repo, bring the console to the directory containing all the program files. Running the command *python app.py* will launch the program.
+
+Git Commands can be found at [Git-Commands cheatsheet](http://github.com/joshnh/Git-Commands).
+Quick GIT tutorial (roughly half-hour at normal video speed) [GIT Tutorial](https://www.youtube.com/watch?v=SWYqp7iY_Tc)
+
+If you don't want to use command line for GIT, there are GUIs available like [GITkraken](https://www.gitkraken.com/git-client)
 
 ### Prerequisites
 
-Make sure you have an up to date version of python (3.7.6 I believe.) 3.8 doesn't work with some of the libraries that are required yet. I think that 3.8 is unstable anyway? So stick with 3.7.6
+Make sure you have an up-to-date version of python (3.7.6 I believe,) and Chrome. Python 3.8 doesn't work with some of the libraries that are required yet. I think that 3.8 is unstable anyway? So stick with 3.7.6
+
 
 Libraries needed:
 ```
@@ -37,7 +43,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
-We use GIT 
+GIT obviously.  
 
 ## Authors
 
