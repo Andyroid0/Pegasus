@@ -82,10 +82,13 @@ function object_catcher(n) {
     var looper = function(){
         while (i < howmanyarrays){
             var arraycontainer = objlist.splice(0, 3)
-            var tasktableitem = document.createElement("LI");
-            tasktableitem.innerHTML = '<button class="btn btn-primary btn-lg" ondragstart="onDragStart(event)" draggable="true" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
-             + arraycontainer[1] + '</button>';
-            tasktableitem.setAttribute("class", "list-group-item")
+            var tasktableitem = document.createElement("div");
+            tasktableitem.innerHTML = '<li class="list-group-item"><button class="btn btn-primary btn-lg" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
+             + arraycontainer[1] + '</button></li>';
+            //tasktableitem.setAttribute("class", "list-group-item")
+            tasktableitem.setAttribute("id", arraycontainer[0] + "line")
+            tasktableitem.setAttribute("draggable", "true")
+            tasktableitem.setAttribute("ondragstart", "onDragStart(event)")
             document.getElementById(arraycontainer[2]).appendChild(tasktableitem);
             i++
         }
@@ -118,24 +121,33 @@ function onDrop(event) {
 
     const draggableElement = document.getElementById(id)
     const dropzone = event.target
-    
-
-    var appendtoo = document.querySelector(dropzone > "div")
-    console.log(appendtoo)
-    
-// Figure out how to drill down to the div element to append dragger to.
-
-    console.log(id)
-
+    var idrev = id.split('line')
     caughtid.pop()
-    scrumlistenv.pop()
-    caughtid.push(id)
-    scrumlistenv.push()
+    caughtid.push(idrev[0])
+
+
+    //caughtid.pop()
+    //scrumlistenv.pop()
+    //caughtid.push(id)
+    //scrumlistenv.push()
     
-    appendtoo.appendChild(draggableElement)
+    dropzone.appendChild(draggableElement)
+
+
 
     event
         .dataTransfer
         .clearData()
 }
 
+function column_identifier(id) {
+    scrumlistenv.pop()
+    scrumlistenv.push(id)
+    eel.list_exchange_button()
+}
+
+eel.expose(listchange_pitcher) // is capable of sending data to python 
+function listchange_pitcher() {
+    var infopacket = caughtid[0] + "..,|,.." + scrumlistenv
+    return infopacket
+}

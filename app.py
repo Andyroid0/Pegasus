@@ -35,7 +35,7 @@ db = TinyDB('db.json')
 scrumb = db.table('scrumb')
 queryenv = []
 scrumlistenv = []
-
+caughtid = []
 
 #=====================================================================
 #|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -147,18 +147,16 @@ def list_change_id_catcher(n):
     thisguy = n
     query_list_change(thisguy)
 
+#need id of taskobject
+
 def query_list_change(n):
+    containera = n.split('..,|,..')
     if len(scrumlistenv) > 0:
         scrumlistenv.pop()
     if len(queryenv) > 0:
         queryenv.pop()
-    query = scrumb.update({'list': scrumlistenv}, Query().id == n)
-    qsub = query['subject']
-    qdesc = query['description']
-    qlist = query['list']
-    qpack = qsub + "..,|,.." + qdesc + "..,|,.." + qlist
-    queryenv.append(qpack)
-    eel.query_trigger()
+    query = scrumb.update({'list': containera[1]}, Query().id == containera[0])
+
 
 
 #-------------------------------------------------------------------------
@@ -188,7 +186,7 @@ def id_exchange_button():
 
 @eel.expose
 def list_exchange_button():
-    eel.taskobject_id_pitcher()(list_change_id_catcher)
+    eel.listchange_pitcher()(list_change_id_catcher)
 
 
 
@@ -204,6 +202,7 @@ def list_exchange_button():
 eel.sleep(1.5)
 pyautogui.hotkey('ctrl', 'shift', 'j')
 
+#print_objects()
 #..........................................................................
 
 

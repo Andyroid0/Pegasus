@@ -127,32 +127,26 @@
     <tr>
  <div class="row">    
 <div class="col-md-4">
-<ul class="list-group" id="tasktabletodo" ondrop="onDrop(event)" ondragover="onDragover(event)">
+<ul class="list-group" id="tasktabletodo" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
   <li class="list-group-item"><h2>To Do</h2></li>
-  <div id="tasktabletododiv" name="divdrilldown">
-
-  </div>
+  
 </ul>
 </div>
 
 
 <div class="col-md-4">
-<ul class="list-group" id="tasktableinprog" ondrop="onDrop(event)" ondragover="onDragover(event)">
+<ul class="list-group" id="tasktableinprog" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
   <li class="list-group-item"><h2>In Progress</h2></li>
-  <div id="tasktableinprogdiv" name="divdrilldown">
-
-  </div>
+  
 </ul>
 </div>
 
 
 
 <div class="col-md-4">
-<ul class="list-group" id="tasktablefin" ondrop="onDrop(event)" ondragover="onDragover(event)">
+<ul class="list-group" id="tasktablefin" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
   <li class="list-group-item"><h2>Finished</h2></li>
-  <div id="tasktablefindiv" name="divdrilldown">
-
-  </div>
+  
 </ul>
 </div>
 
@@ -203,7 +197,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button value="submit" data-dismiss="modal" type="submit" onclick="eel.task_button()" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <button value="submit" data-dismiss="modal" type="submit" onclick="eel.task_button(), location.reload(true)" class="btn btn-primary btn-lg btn-block">Submit</button>
       </div>
   
     </div>
