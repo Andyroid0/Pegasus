@@ -27,10 +27,16 @@ Libraries needed:
 
 Generally testing can be done with print() in python and console.log() in javascript. Everything else is hands on opening the GUI and trying to break it.
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
+## Tool and Functionality Wish-list
+```
+- Screen-sharing, live white board, and web-audio conference tool. (turtle module might be useful)
+- Video-Conferencing tool set.
+- Forms creation tool. For use with surveys, exams, educational purposes, etc. 
+- Wiki creation. ( documentation.)
+- Word document processor. Super clean UI.
+- Google Sheets/ Microsoft excel clone. Emphasis on simplicity of use.
+- Use NOAA Api to create a new Dark Sky, in light of Apple acquiring it and locking out their api.
+```
 ## Built With
 
 * [TinyDB](http://tinydb.readthedocs.io/) - The Database management system used.
