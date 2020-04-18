@@ -35,8 +35,9 @@ Generally testing can be done with print() in python and console.log() in javasc
 - Wiki creation. ( documentation.)
 - Word document processor. Super clean UI.
 - Google Sheets/ Microsoft excel clone. Emphasis on simplicity of use.
-- Use NOAA Api to create a new Dark Sky, in light of Apple acquiring it and locking out their api. [NOAA API docs](https://www.ncdc.noaa.gov/cdo-web/webservices/v2#datasets)
+- Use NOAA Api to create a new Dark Sky, in light of Apple acquiring it and locking out their api. 
 ```
+[NOAA API docs](https://www.ncdc.noaa.gov/cdo-web/webservices/v2#datasets)
 ## Built With
 
 * [TinyDB](http://tinydb.readthedocs.io/) - The Database management system used.
