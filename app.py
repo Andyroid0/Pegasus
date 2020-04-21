@@ -17,8 +17,9 @@ Pushing this application to the Flask Framework in the future might be beneficia
 #                  Imports and Dependencies
 #....................................................................
 
-import eel, json, secrets, pyautogui
+import eel, json, secrets
 from tinydb import TinyDB, Query
+#import pyautogui
 
 #.....................................................................
 #|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -31,7 +32,7 @@ from tinydb import TinyDB, Query
 #                           Variables
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-db = TinyDB('db.json')
+db = TinyDB('web/db.json')
 scrumb = db.table('scrumb')
 queryenv = []
 scrumlistenv = []
@@ -200,7 +201,7 @@ def list_exchange_button():
 #..........................................................................
 
 eel.sleep(1.5)
-pyautogui.hotkey('ctrl', 'shift', 'j')
+#pyautogui.hotkey('ctrl', 'shift', 'j')
 
 #print_objects()
 #..........................................................................
