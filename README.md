@@ -46,7 +46,7 @@ Generally testing can be done with print() in python and console.log() in javasc
 
 ## Contributing
 
-* **OhiograssMan** - [portfolio link will go here]()
+* **Todd Myers** - [portfolio link will go here](https://github.com/OhiograssMan)
 
 ## Versioning
 
