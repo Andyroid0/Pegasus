@@ -121,7 +121,7 @@
 
 
  
-
+<!--
 <main role="main">
 <table class="table table-borderless" id="columnpadout">
   <thead>
@@ -156,6 +156,31 @@
 </thead>
 </table>
 </main>
+-->
+<table class="table table-borderless">
+<tr>
+  <td>
+<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+  <div class="card-header"><h5>To Do</h5></div>
+  <div class="card-body" id="tasktabletodo" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
+  </div>
+</td>
+
+<td>
+  <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+    <div class="card-header"><h5>In Progress</h5></div>
+    <div class="card-body" id="tasktableinprog" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
+    </div>
+</td>   
+
+<td>
+<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+      <div class="card-header"><h5>Finished</h5></div>
+      <div class="card-body" id="tasktablefin" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
+      </div>
+</td>
+</tr>
+</table>
 <!-- ==========================================================================================  -->
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  -->
 <!-- ------------------------------------------------------------------------------------------  -->

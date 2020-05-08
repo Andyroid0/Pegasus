@@ -32,6 +32,7 @@ eel.expose(taskobject_id_grabber)
 function taskobject_id_grabber(id) { //works
     caughtid.pop()
     caughtid.push(id)
+    console.log('durango')
     eel.id_exchange_button()
 }
 
@@ -83,12 +84,20 @@ function object_catcher(n) {
         while (i < howmanyarrays){
             var arraycontainer = objlist.splice(0, 3)
             var tasktableitem = document.createElement("div");
-            tasktableitem.innerHTML = '<li class="list-group-item"><button class="btn btn-primary btn-lg" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
-             + arraycontainer[1] + '</button></li>';
+            tasktableitem.setAttribute("class", "card bg-secondary ")
+            tasktableitem.setAttribute("onclick", "taskobject_id_grabber(this.id)")
+            tasktableitem.setAttribute("data-toggle", "modal")
+            tasktableitem.setAttribute("data-target", "#modaltaskobjectdetails")
+            tasktableitem.setAttribute("id", arraycontainer[0])
+            tasktableitem.innerHTML = '<div class="card-body">' + arraycontainer[1] +'</div>';
+
+            //tasktableitem.innerHTML = '<li class="list-group-item"><button class="btn btn-primary btn-lg" onclick="taskobject_id_grabber(this.id)" data-toggle="modal" data-target="#modaltaskobjectdetails" id="' + arraycontainer[0] + '">'
+            // + arraycontainer[1] + '</button></li>';
             //tasktableitem.setAttribute("class", "list-group-item")
-            tasktableitem.setAttribute("id", arraycontainer[0] + "line")
+            //tasktableitem.setAttribute("id", arraycontainer[0] + "line") // ID number set by python secrets module
             tasktableitem.setAttribute("draggable", "true")
             tasktableitem.setAttribute("ondragstart", "onDragStart(event)")
+            tasktableitem.setAttribute("ondrop", "false")
             document.getElementById(arraycontainer[2]).appendChild(tasktableitem);
             i++
         }
@@ -110,35 +119,28 @@ function onDragStart(event){
         .setData('text/plain', event.target.id)
 }
 
+
 function onDragover(ever) {
     event.preventDefault()
 }
 
-function onDrop(event) {
+
+function onDrop(event, el) {
     const id = event
         .dataTransfer
-        .getData('text')
+        .getData('text');
 
     const draggableElement = document.getElementById(id)
     const dropzone = event.target
     var idrev = id.split('line')
     caughtid.pop()
     caughtid.push(idrev[0])
-
-
-    //caughtid.pop()
-    //scrumlistenv.pop()
-    //caughtid.push(id)
-    //scrumlistenv.push()
-    
-    dropzone.appendChild(draggableElement)
-
-
-
+    el.appendChild(draggableElement)
     event
         .dataTransfer
         .clearData()
 }
+
 
 function column_identifier(id) {
     scrumlistenv.pop()
