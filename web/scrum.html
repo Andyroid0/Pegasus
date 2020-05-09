@@ -94,10 +94,9 @@
 
 
 <br>
-<button onclick="eel.clear_db(), location.reload(true)" class="btn btn-primary btn-lg btn-block">Database Clear</button>
+<button onclick="eel.clear_db(), location.reload(true)" class="btn btn-dark btn-lg ">Database Clear</button>
 
-<br>
-<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+<button type="button" class="btn btn-dark btn-lg " data-toggle="modal"
   data-target="#modalContactForm" >New Task</button>
   <br>
 <!-- ==========================================================================================  -->
@@ -118,69 +117,32 @@
 <!--  =========================================================================================  -->
 
 
-
-
- 
-<!--
-<main role="main">
-<table class="table table-borderless" id="columnpadout">
-  <thead>
-    <tr>
- <div class="row">    
-<div class="col-md-4">
-<ul class="list-group" id="tasktabletodo" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
-  <li class="list-group-item"><h2>To Do</h2></li>
-  
-</ul>
-</div>
-
-
-<div class="col-md-4">
-<ul class="list-group" id="tasktableinprog" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
-  <li class="list-group-item"><h2>In Progress</h2></li>
-  
-</ul>
-</div>
-
-
-
-<div class="col-md-4">
-<ul class="list-group" id="tasktablefin" ondrop="onDrop(event), column_identifier(this.id)" ondragover="onDragover(event)">
-  <li class="list-group-item"><h2>Finished</h2></li>
-  
-</ul>
-</div>
-
-</tr>
-</div> 
-</thead>
-</table>
-</main>
--->
 <table class="table table-borderless">
 <tr>
   <td>
-<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+<div class="card text-white bg-dark mb-3 shadow" style="width: 18rem; height: 50rem;">
   <div class="card-header"><h5>To Do</h5></div>
-  <div class="card-body" id="tasktabletodo" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
+  <div class="card-body overflow-auto" id="tasktabletodo" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
   </div>
 </td>
 
 <td>
-  <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+  <div class="card text-white bg-dark mb-3 shadow" style="width: 18rem; height: 50rem;">
     <div class="card-header"><h5>In Progress</h5></div>
     <div class="card-body" id="tasktableinprog" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
     </div>
 </td>   
 
 <td>
-<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+<div class="card text-white bg-dark mb-3 shadow" style="width: 18rem; height: 50rem;">
       <div class="card-header"><h5>Finished</h5></div>
       <div class="card-body" id="tasktablefin" ondrop="onDrop(event,this), column_identifier(this.id)" ondragover="onDragover(event)">
       </div>
 </td>
 </tr>
 </table>
+
+
 <!-- ==========================================================================================  -->
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  -->
 <!-- ------------------------------------------------------------------------------------------  -->
