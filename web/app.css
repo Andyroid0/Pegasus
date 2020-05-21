@@ -13,7 +13,7 @@ body {
     padding-left: 30px;
   }
 
-  .scroll {
-    max-height: 400px;
-    overflow-y: scroll;
+.cardmargin {
+  margin-bottom: 10px;
 }
+

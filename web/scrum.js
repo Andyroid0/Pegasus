@@ -84,7 +84,7 @@ function object_catcher(n) {
         while (i < howmanyarrays){
             var arraycontainer = objlist.splice(0, 3)
             var tasktableitem = document.createElement("div");
-            tasktableitem.setAttribute("class", "card bg-secondary ")
+            tasktableitem.setAttribute("class", "card bg-secondary cardmargin")
             tasktableitem.setAttribute("onclick", "taskobject_id_grabber(this.id)")
             tasktableitem.setAttribute("data-toggle", "modal")
             tasktableitem.setAttribute("data-target", "#modaltaskobjectdetails")
