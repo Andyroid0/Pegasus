@@ -17,7 +17,7 @@ Pushing this application to the Flask Framework in the future might be beneficia
 #                  Imports and Dependencies
 #....................................................................
 
-import eel, json, secrets
+import eel, json, secrets, os
 from tinydb import TinyDB, Query
 #import pyautogui
 
@@ -27,12 +27,19 @@ from tinydb import TinyDB, Query
 
 '''                          &                                      '''
 
+# QUICK SETUP -----------
+if os.path.exists("C://gE_Ode") == False:
+    os.system('mkdir "C://gE_Ode"')
+if os.path.exists("C://gE_Ode/pegasus") == False:
+    os.system('mkdir "C://gE_Ode/pegasus"')
+#~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 #=====================================================================
 #                           Variables
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-db = TinyDB('web/db.json')
+db = TinyDB('C://gE_Ode/pegasus/db.json')
 scrumb = db.table('scrumb')
 queryenv = []
 scrumlistenv = []
@@ -169,7 +176,7 @@ def query_list_change(n):
 '''                             #                                       '''
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-eel.start('main.html', block=False)
+eel.start('scrum.html', block=False)
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 '''                             \/                                      '''
